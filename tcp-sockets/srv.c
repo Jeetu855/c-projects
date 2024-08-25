@@ -35,7 +35,8 @@ int main() {
   c = socket(AF_INET, SOCK_STREAM, 0);
 
   srv.sin_family = AF_INET;
-  srv.sin_addr.s_addr = 0;
+  srv.sin_addr.s_addr =
+      0; // binds the socket to all available network interfaces.
   srv.sin_port = htons(PORT);
 
   if (bind(s, (struct sockaddr *)&srv, sizeof(srv)) !=
@@ -67,6 +68,8 @@ int main() {
     close(s);
     return -1;
   }
+  // we are server and we got clients fd and we are writing and readig data from
+  // it
 
   printf("Client connected\n");
   read(c, buffer, 511);
