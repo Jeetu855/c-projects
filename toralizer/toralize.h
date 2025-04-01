@@ -11,6 +11,9 @@
 #include <arpa/inet.h>
 
 
+// man 3 dlsym
+#include <dlfcn.h>
+
 #define PROXY        "127.0.0.1" 
 #define PROXYPORT    9050
 #define reqsize      sizeof(struct proxy_request)
@@ -63,5 +66,7 @@ typedef struct proxy_response Res;
 
 
 // signatures
-Req *request(const char *, const int); // const keyword means we cannot change these variables inside the function
-int main(int,char**);
+// Req *request(const char *, const int); // const keyword means we cannot change these variables inside the function
+Req *request(struct sockaddr_in *); // const keyword means we cannot change these variables inside the function
+// int main(int,char**);
+int connect(int, const struct sockaddr *, socklen_t );
