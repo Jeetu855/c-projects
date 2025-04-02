@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export LD_PRELOAD=/home/jeetu/Projects/toralizer/toralize.so
+export LD_PRELOAD=~/Projects/toralizer/toralize.so
 
 # toralize curl <ip> <port>
 # to access all the arguments passed
