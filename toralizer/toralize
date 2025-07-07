@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/bin/bash
 
 export LD_PRELOAD=/home/jeetu/Projects/toralizer/toralize.so
@@ -7,3 +8,14 @@ export LD_PRELOAD=/home/jeetu/Projects/toralizer/toralize.so
 ${@} 
 
 unset LD_PRELOAD
+=======
+#!/bin/bash
+
+export LD_PRELOAD=~/Projects/toralizer/toralize.so
+
+# toralize curl <ip> <port>
+# to access all the arguments passed
+${@} 
+
+unset LD_PRELOAD
+>>>>>>> 5e8201051fd64fbfe9a6aa02e4606a7b28adf915
